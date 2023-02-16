@@ -559,3 +559,39 @@ footer {
   border: 1px solid var(--footer-text-color);
   border-top: none;
 }
+
+.backdrop {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(46 47 66 / 16%);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  min-height: 550px;
+  background: #2e2f42;
+  border-radius: 5px;
+  padding: 30px;
+}
+.modal-close {
+  width: 24px;
+  min-height: 24px;
+  background: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
