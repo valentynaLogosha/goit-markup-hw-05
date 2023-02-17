@@ -11,6 +11,7 @@
   --footer-socials-bg: rgba(255, 255, 255, 0.1);
   --footer-socials-bg-hover: #31d0aa;
   --icon-color: #8e8f99;
+  --modal-color: #fcfcfc;
   --transition-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
@@ -545,6 +546,27 @@ footer {
 .item-list:nth-child(n + 7) {
   margin-bottom: 0;
 }
+.portfolio-cover-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-cover-text {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--section-second-color);
+  background: var(--logo-web-color);
+  padding: 32px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: 300ms linear;
+  overflow: auto;
+}
+.item-list:hover .portfolio-cover-text {
+  transform: translateY(0%);
+}
 .control {
   padding-top: 96px;
   padding-bottom: 120px;
@@ -561,6 +583,7 @@ footer {
   border-top: none;
 }
 
+/* Modal  */
 .backdrop {
   position: fixed;
   top: 0;
@@ -574,15 +597,15 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 500px;
-  min-height: 550px;
-  background: #fcfcfc;
+  transform: translate(-50%, -50%) scale(100%);
+  width: 408px;
+  padding: 24px;
+  min-height: 576px;
+  background: var(--modal-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 30px;
-  transition: transform 300ms linear;
+  transition: transform 250ms var(--transition-func) 50ms;
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale (0);
