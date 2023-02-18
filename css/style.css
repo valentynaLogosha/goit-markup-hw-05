@@ -422,6 +422,7 @@ img {
   border-color: var(--header-focus-hover-color);
   color: var(--header-focus-hover-color);
   background-color: var(--main-color);
+  transition: background-color 250ms var(--transition-func);
 }
 .clients-icon {
   fill: currentColor;
@@ -600,9 +601,11 @@ footer {
   transform: translateY(100%);
   transition: 300ms linear;
   overflow: auto;
+  opacity: 0;
 }
 .item-list:hover .portfolio-cover-text {
   transform: translateY(0%);
+  opacity: 1;
 }
 .control {
   padding-top: 96px;
@@ -671,7 +674,7 @@ footer {
   border-color: var(--header-focus-hover-color);
 }
 .modal-close:hover svg {
-  fill: var(--mai);
+  fill: var(--main-background-color);
 }
 .is-hidden {
   opacity: 0;
