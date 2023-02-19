@@ -114,10 +114,10 @@ img {
   line-height: 1.5;
   color: var(--main-text-color);
   display: flex;
-  transition: color 250ms var(--transition-func);
 }
 .nav-link {
   color: var(--main-text-color);
+  transition: color 250ms var(--transition-func);
 }
 .current {
   position: relative;
@@ -487,12 +487,12 @@ footer {
   height: 40px;
   border-radius: 50%;
   background-color: var(--footer-socials-bg);
+  transition: background-color 250ms var(--transition-func);
 }
 
 .footer-social-networks-item a:hover,
 .footer-social-networks-item a:focus {
   background-color: var(--footer-socials-bg-hover);
-  transition: background-color 250ms var(--transition-func);
 }
 
 .footer-social-networks-item:last-child {
@@ -525,14 +525,21 @@ footer {
   min-width: 30px;
   padding: 12px 24px;
   cursor: pointer;
-  transition: background-color 250ms var(--transition-func);
+  transition: background-color 250ms var(--transition-func),
+    color 250ms var(--transition-func),
+    border-color 250ms var(--transition-func),
+    box-shadow 250ms var(--transition-func);
 }
 .btn-large:hover,
-.btn-large:focus {
-  background-color: var(--header-focus-hover-color);
+.btn-large:focus,
+.btn-large:active {
   color: var(--main-color);
-  transition: background-color 250ms var(--transition-func);
+  background-color: var(--header-focus-hover-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-color: var(--header-focus-hover-color);
 }
+
 .pic {
   list-style-type: none;
   display: flex;
@@ -547,6 +554,9 @@ footer {
 
 .pic a {
   display: inline-block;
+  color: var(--main-link-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms var(--transition-func);
 }
 .pic a:hover,
 .pic a:focus {
@@ -554,7 +564,14 @@ footer {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   transition: background-color 250ms var(--transition-func);
 }
-
+.pic a:hover,
+.pic a:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.pic a:active {
+  color: var(--main-link-color);
+}
 .headline {
   font-weight: 500;
   font-size: 20px;
@@ -598,10 +615,11 @@ footer {
   background: var(--logo-web-color);
   padding: 32px;
   height: 100%;
-  transform: translateY(100%);
-  transition: 300ms linear;
   overflow: auto;
   opacity: 0;
+  color: var(--section-second-color);
+  transition: transform 250ms var(--transition-func),
+    opacity 500ms var(--transition-func);
 }
 .item-list:hover .portfolio-cover-text {
   transform: translateY(0%);
@@ -631,7 +649,7 @@ footer {
   height: 100%;
   width: 100%;
   background: rgb(46 47 66 / 16%);
-  transition: opacity 300ms linear, visibility 300ms linear;
+  transition: transform 250ms var(--transition-func) 50ms;
 }
 .modal {
   position: absolute;
@@ -669,12 +687,13 @@ footer {
   transition: fill 250ms var(--transition-func);
 }
 
-.modal-close:hover {
+.modal-close:is(:hover, :focus) {
   background-color: var(--header-focus-hover-color);
   border-color: var(--header-focus-hover-color);
 }
+
 .modal-close:hover svg {
-  fill: var(--main-background-color);
+  fill: var(--main-color);
 }
 .is-hidden {
   opacity: 0;
